@@ -1,0 +1,16 @@
+<!-- <h1>Blog Home!</h1> -->
+<!-- looping through the posts dict that we defined in the views.py file -->
+<!-- the remainder of the html is inherited from the base.html -->
+<!-- the for-loop below overrides the block content -->
+{%  extends "blog/base.html" %}
+{% block content %}
+    {% for post in posts %}
+    <!-- accessing vars with double curly -->
+        <h1>{{ post.title }}</h1>
+        <p>By {{ post.author }} on {{ post.date_posted }}</p>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+<!-- dont need to explicitelty state which  -->
+<!-- block we're ending but can be good to keep track  -->
+{% endblock content %}
+
